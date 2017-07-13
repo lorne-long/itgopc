@@ -1,0 +1,606 @@
+@import  "./common.scss";
+/**index start**/
+
+.index-banner{
+    height: 800px;position: relative;width: 100%;
+    .banner-wrapper{
+           img{ height: 800px; width: 100%;}
+     }
+    .banner-page{
+         position: absolute;left:0; z-index: 2;  bottom:168px;width:100%; text-align:center;
+        a{ display: inline-block; width: 50px;height: 10px;margin-left: 15px;border-radius:0;background: #005355; &.active{ background: #ccab67;}}
+    }
+}
+.index-main{
+.game-list{
+    background:#eee url("../images/bg/bg-main.jpg") no-repeat; height: 400px;
+    .game-platform{
+        position: relative; text-align:center ;top:-62px;z-index: 1; font-size:0;
+        li{   display: inline-block;
+            a{ display: block;width: 144px;font-weight: bold; height: 124px;
+            font-size: 16px;color:#fff;margin-left: 15px; padding-top:76px; background: url("../images/icon/game.png") no-repeat; }
+            &:first-child{ margin-left: 0;}
+            &.active{background: url("../images/icon/game.png") no-repeat;color:#000; }
+
+           a:hover,&.active{color:#2a2a2d;}
+            .pt{ &:hover{background-position:-0px -124px; }  }
+            .dt{ background-position:  -144px 0;&:hover,&.active{background-position:  -144px -124px; } }
+            .mg{ background-position:  -288px 0;&:hover,&.active{background-position:  -288px -124px; } }
+            .nt{ background-position:  -432px 0;&:hover,&.active{background-position:  -432px -124px; } }
+            .qt{ background-position:  -576px 0;&:hover,&.active{background-position:  -576px -124px; } }
+            .ttg{background-position:  -721px 0;&:hover,&.active{background-position:  -721px -124px; } }
+        }
+    }
+    .game-view{
+         height: 287px;border-radius: 15px; border:2px #dcdcdc;position: relative;top:-37px;background-color: #fff;
+         .next,.prev{position:absolute;height:88px;width:44px;top:100px;  }
+         .next{right:-14px;background-position:-535px -55px;}
+         .prev{left:-12px;background-position:-489px -55px;}
+         .game-banner{
+             width: 1060px; margin:0 auto;font-size:0;padding-top: 31px; position: static;
+            .game-wrapper{ margin-left: -20px; white-space: nowrap;position: relative;
+                 li{ display:inline-block;margin-left: 20px; width: 250px; height: 221px; background-color: #dcdcdc;cursor:pointer;position: relative;
+                 .game-play,img{height: 177px; width:247px; margin:2px;}
+                 &:hover,&.active{  background-color:#1f999e ;color:#fff; .game-play{display: block;}}
+                    strong{display:block; height: 40px;line-height: 40px; font-size: 14px;font-weight: bold; text-align: center;}
+                 }
+                 .game-play{
+                     position: absolute;top:0;left:0;text-align: center; display: none; background: rgba(0,0,0,0.5);
+                      padding-top:53px;white-space:normal;
+                     a{display:inline-block;height:30px;width:100px; font-weight:600; line-height: 30px;font-size: 14px;background-position:-698px -53px;}
+                    .into{ margin: 15px 50px 0;  background-position:-587px -53px; }
+                 }
+            }
+       }
+    }
+}
+   .activity{ background: url("../images/bg/bg.jpg"); height: 470px; padding-top: 50px; z-index:0;position: relative; z-index: 1;
+   .activity-banner{ width:776px;
+          .banner-wrapper{height: 320px; img{height: 320px; width:776px; } }
+          .banner-page{
+              font-weight:bold;font-size: 0;height: 50px; line-height: 50px;position: relative;;
+              a{ display: inline-block;width:20%; font-size: 14px; color:#333; border-radius: 0;
+              text-align: center; margin: 0; padding: 0; height: auto; background-color: #dcdcdc;
+              &.active,&:hover{ background-color:#1f999e; color:#fff;}}
+          }
+       }
+    }
+    .winning-info{
+         position: absolute;top:0;right: 0;  width:405px; height:691px; background: url("../images/bg/menu.jpg"); z-index:2;
+         &:before,&:after{
+             position: absolute; content: ""; box-sizing:content-box; width: 0; height: 0; border:#fff 20px solid;bottom:-20px;z-index:1;
+             border-top-color: #000;
+         }
+           &:before{ left:-10px;border-right-width: 0px;border-left-width:11px ;}
+           &:after{right:-10px;border-left-width:0px; border-right-width:11px ;}
+        .money{ border:5px solid #f6cc74; height: 150px; text-align: center;}
+        .tips-txt{ margin: 13px 0 14px;}
+        .money-number{
+            &:before{
+                @extend .icons;
+                content: ""; display:inline-block;width:28px; position:absolute;height:40px; background-position:-458px -50px;left:0;
+            }
+            position:relative;
+            overflow: hidden; margin-left:40px;padding-left: 28px;
+            span,i{float:left;text-align: center; border-radius: 5px; height:40px;width:25px;font-size: 30px; line-height: 42px; background-color:#0d7578;color:#ffca5d; margin-left:1px;font-weight: bold;}
+            i{width: auto; padding:0 1px;}
+        }
+        .winning-list{ border-bottom:1px solid #171719;position: relative;
+            li{ padding:10px 30px 10px 10px;  height: 102px;border-bottom:1px solid #35353a;border-top:#171719 1px solid;color:#ccc;}
+            li:first-child{border-top: none;}
+            img{float:left; width: 120px; height: 80px; border:#5e5e5e solid 1px; }
+            .info{margin-left: 138px; white-space: nowrap; line-height:24px;font-size:14px;padding:5px 0;}
+            .info p{@extend .txthd;}
+            b{color:#1f999e;}span{color:#ffca5d; }
+        }
+    }
+    .help-self{
+        background-color: #eee;color:#1f999e;font-weight: bold; font-size: 0;
+        a{display:inline-block;width: 196px;height:251px; padding-top: 45px; line-height:2;text-align: center;font-size:18px; border-left:#ccc 1px solid;border-right:#fff 1px solid;}
+        a:first-child{border-left:none;}
+        a.bdnone{border-right:none;}
+    }
+}
+/**index end**/
+/**information start**/
+.information {
+    background:#eee url("../images/bg/bg-main.jpg") no-repeat top center;padding: 30px 0;font-size: 14px;
+    .container{width: 1178px; border:#dcdcdc 2px solid;border-radius:25px;background-color: #fff;padding:50px 50px 100px 0; min-height:700px;}
+  /**question**/
+     .content-main{float: left; margin-left:27px; width: 837px;}
+    .content-main>div{
+       color:#666;line-height: 30px;
+       h3{color:#0d7578;font-size: 18px; margin: 38px 0 18px;}
+       ol{ list-style: decimal;padding-left:14px;}
+       table{
+           text-align: center;border:1px #ddd solid; margin: 40px 0; width: 100%;border:1px red solid;background-color: #eee;
+           th{  border:1px #fff solid;height: 40px; vertical-align: middle;font-size: 16px;color:#fff; background-color: #0d7578;;}
+           td{ border-collapse: separate; line-height: 30px;vertical-align: middle; height: 31px; border:1px #fff solid;}
+       }
+    }
+    .tab-menu{position: relative;
+        font-size: 0; text-align: center; background:#fff url("../images/bg/border-bottom.png") no-repeat bottom center;padding-bottom: 1px;
+        a{ display: inline-block; border:1px solid #dcdcdc; padding:0 30px ; border-bottom: none; height: 50px;font-size:16px;line-height: 50px;
+        border-radius:15px 15px 0 0 ;  margin-left: 10px;
+            &.active,&:hover{color:#fff!important; background-color: #0d7578!important;;  }
+        }
+    }
+    .contactus{margin-bottom: 200px;}
+}
+/**information end**/
+
+
+/**game start**/
+.games{
+        background: #eee url(../images/bg/bg-main.jpg) no-repeat top center;
+    padding: 30px 0;
+    font-size: 14px;
+    .container{width: 1178px;}
+    .games-menu{ @extend .clearfix;
+        margin-top: 30px;padding-left:134px;
+        a{
+           float:left;position: relative; width:149px; height:60px;margin-left:-16px;
+           line-height:60px;font-weight: bold; text-align: center;cursor: pointer;
+          @include icons;
+           background-position:-577px  -139px;font-size: 0;
+           span{display: none;}
+           &.active,&:hover{
+               z-index:1;color:#2a2a2d;background-position:-577px  -200px;
+               font-size: 16px;
+               span{ display: block;}
+               img{display: none;}
+           }
+        }
+    }
+    .games-main{
+         border:2px #dcdcdc solid; border-radius: 20px; background-color: #fff; padding:50px 47px;
+     }
+    .games-list{
+        li{
+            float:left;margin:10px; width: 250px; height: 221px; border:2px solid #dcdcdc; cursor:pointer;position: relative;
+          .game-play,img{height: 177px; width:247px;}
+             &:hover,&.active{
+                color:#fff; border-color:#1f999e;
+                 .game-play{display: block;}
+                 strong{background-color:#1f999e;}
+             }
+             strong{display:block;background-color: #dcdcdc; height: 40px;line-height: 40px; font-size: 14px;font-weight: bold; text-align: center;}
+        }
+        .game-play{position: absolute;top:0;left:0;text-align: center; display: none; background: rgba(0,0,0,0.5); padding-top:53px;white-space:normal;
+            a{@extend .icons; display:inline-block;height:30px;width:100px; font-weight:600; line-height: 30px;font-size: 14px;background-position:-698px -53px;}
+           .into{ margin: 15px 50px 0;  background-position:-587px -53px; }
+        }
+    }
+    .search-menu{
+        margin:0px 0 35px 37px;color:#666;font-size: 14px;
+        dl{margin-top:5px;height: 25px;line-height: 25px;font-weight: bold; }
+        dd{ float:left; margin: 0 5px; padding: 0 6px;cursor:pointer;
+            &.active,&:hover{
+                background-color: #21a1a6;color: #fff;
+                border-radius:5px;
+            }
+      }
+    }
+    .search-form{
+         color:#666;font-size: 14px;margin-right: 20px;
+        input{ border:1px solid #21a1a6;border-radius: 5px; height: 33px;
+        padding: 8px;; }
+        .green,input::placeholder{color:#0d7578;}
+        .sh-ipt{position:relative; margin-bottom: 6px;}
+        .filter{ position: absolute; top:33px;width: 171px;right: 0;z-index: 1;
+             a{display: block;text-align: left; height:30px; background: #fff;line-height:30px; padding-left: 10px;}
+             a:hover{ background: #ccc;}
+        }
+        button{position: absolute;top:0;right: 0;border-radius: 0 5px 5px 0;
+         font-size: 0; background:url("../images/bg/btn-sj.jpg");  height:33px; width:46px;}
+        button>i{
+            @include icons;
+            display:inline-block;height: 24px;width: 24px;;
+            background-position:-430px -146px;
+
+        }
+    }
+}
+
+/**game end**/
+
+/**promo start**/
+ .promo {
+     .container{ padding:50px 87px;}
+     .tab-menu{ margin-bottom:30px;}
+     .promo-main{
+         li{
+                img{height:190px;width: 100%;}
+                div.info-brief{color:#0d7578;margin-bottom: 20px; background-color:#eee;line-height:40px; height: 40px;padding-left:17px;position: relative;}
+
+             .btn-open{
+                 width:135px; background-color:#0d7578;color: #fff;text-align: center;cursor:pointer;
+                 &:before{
+                    @include icons;height: 19px;width: 19px; display: inline-block;
+                    background-position:-505px -189px; vertical-align: middle;margin-right:7px;margin-top: -3px;
+                 }
+                 &.close:before{
+                       background-position:-470px -193px; margin-top:0;
+                 }
+             }
+             span.titie{display: inline-block; width:387px;}
+            .time{ &:before{
+                      @include icons; height: 24px;width: 24px; display: inline-block;;
+                      background-position:-427px -187px; vertical-align: middle; margin-top: -3px;margin-right: 7px;
+                 }
+             }
+          }
+         .promo-view{
+                line-height: 30px;color:#666;font-size: 14px; margin-bottom:20px;
+                 h3{font-size: 18px;color:#0d7578;line-height: 46px;
+                    small,span{color:#666;font-size: 14px;}
+                 }
+                 ol{ list-style:decimal; padding-left:1em;}
+           }
+     }
+}
+
+
+/**member page**/
+.user-pg{
+     background:#eee url("../images/bg/bg-main.jpg") no-repeat top center;padding: 30px 0;font-size: 4px;font-size: 14px;color:#666;
+    .container{width: 1178px; border:#dcdcdc 2px solid;border-radius:25px;background-color: #fff;padding:50px 50px 100px 0px; min-height:700px;}
+      .tab-menu{position: relative;
+        font-size: 0; text-align: center; background:#fff url("../images/bg/border-bottom.png") no-repeat bottom center;padding-bottom: 1px;
+        a{ display: inline-block; border:1px solid #dcdcdc; padding:0 28px ; border-bottom: none; height: 50px;font-size:16px;line-height: 50px;
+        border-radius:15px 15px 0 0 ;  margin-left: 10px;
+            &.active,&:hover{color:#fff!important; background-color: #0d7578!important;;  }
+        }
+        &.u-tab-menu{
+            a{border:none; background-color:#eee; color:#0d7578; }
+        }
+        &.u-tab-bd{border-bottom: 2px solid #0d7578;background: #fff; padding: 0;}
+        &.max-tab{border-bottom: 2px solid #0d7578; padding-bottom: 0; a{margin-left:2px ;} }
+    }
+    .content-main{float: left; margin-left:27px; width: 837px;}
+    .content-main h3{
+         font-size: 18px; line-height:56px;height: 56px;color:#0d7578;padding-left: 20px;position: relative;z-index: 1;
+         &.other{line-height: 50px; height: 50px; margin-top: 27px; }
+         &.top-one{line-height: 50px; height: 50px;}
+         &.top-left{line-height: 50px; height: 50px; position: absolute;top:50px;}
+    }
+    /**personal data **/
+       .personal-data{
+            background-color: #eee; line-height: 37px; border-bottom: #0d7578 3px solid;font-size: 14px;
+            li{ border-top: 1px #fff solid;border-bottom: 1px solid #ccc;padding-left: 46px;
+                 input{line-height: 22px; height: 22px;}
+                 a{  background: #21a1a6;
+    padding: 0 10px;
+    color: #fff;
+    line-height: 22px;
+    height: 22px;
+    display: inline-block;}
+            }
+
+            span{ padding-left: 10px;}
+        }
+        .bank-data{
+                margin-left: -15px;
+                li{font-size:14px; float:left;background-color: #0d7578;border-radius:15px;width: 269px;color:#ccab67;
+                margin-left: 15px; margin-bottom: 15px; height:146px; padding-top:20px;
+                line-height:49px; }
+                .bank-info{@extend .clearfix;  background-color:#ccab67;height:76px;font-size: 18px;color:#2a2a2e;line-height: 38px;
+                    p{border-top:2px solid #0d7578;}
+                    .bank-card{padding-left:77px; text-align: left;}
+                }
+                .bank-icon{float:left;text-align: center;  height: 77px; width:77px;line-height:77px;}
+        }
+    /**personal data**/
+
+    /**member conter**/
+    .pay-type{@extend .clearfix;  margin-top: 15px; margin-left:-15px; li{margin-left: 15px;float:left;}}
+    .u-money-total{background-color:#eee; display:block; width: 286px; margin: 0 auto;font-size: 18px;text-align: center;line-height: 50px;
+        position:relative;height: 50px;
+          &:before,&:after{
+             position: absolute; content: ""; box-sizing:content-box;width: 0; height: 0; border:transparent 50px solid;bottom:0px;z-index:1;
+             border-bottom-color:#eee;
+            border-top-width: 0px;z-index: 1;
+         }
+          &:before{ left:-29px;border-right-width: 0px;border-left-width:29px;}
+          &:after{right:-29px;border-left-width:0px; border-right-width:29px ; }
+        .bm-border{  position: absolute; bottom: 0;left:11px; font-size: 0; border:2px solid #d6d6d6;width:267px;border-radius:20px; }
+    }
+    .u-slot-mn{background-color:#eee; border-bottom: 2px solid #0d7578;font-size:16px;height: 50px; li{ cursor: pointer; float:left;width:25%; text-align: center;}
+        strong{line-height: 50px;height:50px; display: inline-block;}
+        li.active,li:hover{ strong{border-bottom: 4px solid #ccab67;} }
+    }
+    .u-pw-list{background-color:#eee;border-top: 1px #fff solid; font-size: 14px; border-bottom: 1px #ccc solid;   li{ line-height: 37px;  padding-left: 100px; float:left; width:279px; }}
+    .u-pw-list.bdtopnone{border-top: none;}
+    .u-bd,.u-step-por,.u-often-fun{border:1px solid #ccc; background-color:#eee;}
+    .u-step-por{border-radius:10px;position:relative; padding-top: 78px; height: 124px;line-height: 30px;
+        div.tips{position: absolute;top:-66px;left:0;padding: 4px 20px 0;font-size: 12px;color:#fff;text-align: center; height:45px;  border-radius: 10px;line-height:18px; background-color: #ccab67;
+            &:before{position: absolute; bottom:-14px;width:0;height:0;left:50%; content: ""; box-sizing:content-box;border:7px solid #eee ;border-top-color:#ccab67;}}
+            .por-total{background:#ccc; height:3px; position: relative;
+            .now-por{ background-color:#ccab67 ; width: 50%;position: absolute; left:0;top:0; width: 50%; height: 100%; }}
+            .now-por-cur,.old-por-cur{position:absolute;top:-7px;left:5px; display: inline-block; height: 12px;width: 12px;
+
+            border-radius: 50%;
+             @include icons;background-position:-584px -277px;}
+            .old-por-cur{background-position:-598px -277px;border-color: #ccab67;  }
+            .vip1{margin-left: 94px; width: 168px;}
+            .vip2{width: 192px;}
+            .vip3{width: 187px;}
+    }
+    .u-vip{
+        li{display: inline-block; width: 20%; position: relative;}
+    }
+    .u-often-fun{padding: 24px 0 21px; li{ float:left;border-left: 1px solid #ddd; text-align: center; width: 138px; }strong{ display: block;  margin-top: 8px;} }
+    /**member conter**/
+
+    /**security center**/
+    .up-pwd{
+        background: #eee; height: 360px;line-height: 30px;
+        input{ height: 30px;width: 300px;  line-height: 30px; border:1px solid #ddd; padding-left:11px; background: #fff;}
+        tr{ height: 39px; }
+    }
+    /**security center**/
+
+    /**表单公用**/
+
+    .btn-submit,.btn-reset,.formbtn{ display: inline-block; height:50px;border-radius:10px;color:#2a2a2d;line-height: 50px; padding: 0 59px;font-size: 16px; background-color:#ccab67; ;}
+    .btn-reset{ background-color:#0d7578; margin-left: 20px;color:#fff; margin-top: 10px;}
+    .disablebtn{ background: #ccc; color:#fff;cursor: not-allowed !important;}
+     .form,.formbox{
+         background-color: #eee;  padding: 20px 0;border-top:2px solid #0d7578 ;
+         input::placeholder{ color:#0d7578;}
+        .btn-submit,.btn-reset{ padding: 0 42px;}
+
+        p,.ipubox,.inputbox{ padding: 0;position: relative;
+            label,span.label{ width:113px ; display: inline-block; text-align: right;  }
+            select,input{ height: 30px;  width: 300px;padding-left: 10px;margin-bottom: 9px;}
+            select{line-height: 30px;}
+        }
+        &>div{padding-left:118px; line-height:24px;}
+        .mg-btm{ margin-bottom:24px;}
+    }
+     /**表单公用**/
+    /**财务中心**/
+    .finance{
+         h3{ line-height: 69px; line-height: 69px;
+            small{ font-size: 14px;}
+     }
+         .transfer-log{
+             width: 100%; text-align: center;background-color: #eee;border-collapse:separate;
+             th{ border-bottom: 2px solid #0d7578; height: 52px; line-height: 52px;font-size: 16px;}
+             tbody td{
+                 line-height:37px ;height: 37px;border-top:1px solid #fff;border-bottom:#ccc 1px solid;
+             }
+         }
+         .withdraw,.transfer{ padding-top: 30px;
+            .form{border:none;border-bottom:2px solid #0d7578;}
+         }
+     }
+     .tab-menu-two{margin-left: 224px;
+         a{
+             @extend  .u-money-total;
+              display: inline-block; width: 147px;  margin-left:30px;
+              .bm-border{ width:124px}
+              &.active{ background:#0d7578 ;color:#fff; z-index: 21;
+                .bm-border{ display: none;}
+                &:before,&:after{ border-bottom-color:#0d7578;}
+          }
+        }
+     }
+    /**财务中心**/
+    /**记录查询**/
+    .log-search{
+        position: relative;border-top:2px solid #0d7578 ;background-color: #eee; padding:25px 32px 0 32px;text-align: center;
+        .log-list,.data_info{ border:1px solid #ddd;}
+        dt,dd{
+            display: inline-block;line-height: 25px; height: 25px;padding: 0 9px;cursor:pointer;
+            &.active{ background-color:#0d7578;color:#fff; border-radius:8px;}
+        }
+        .log-form{
+                font-size: 0; line-height: 15px; margin:23px 0 18px ;
+                &>div{position: relative;vertical-align: top;padding:7px 7px 6px 7px;  border-radius: 5px;   z-index: 11; font-size: 12px; display: inline-block; height: 30px;text-align: left;
+                 border:#ddd solid 1px;width: 174px;margin-right: 15px; background-color: #fff;
+                    i{ position: absolute;right:7px;top:5px;height:18px; width: 16px; background-position:-619px -274px}
+                      input,select{height: 15px;background-color: #fff;padding-left:5px;border:none;border-left: 1px #ddd solid;width:88px;}
+             }
+             &>p{ display: inline-block; height: 30px;font-size:14px ;    vertical-align: top;
+                    input,select{ width: 66px; line-height: 30px;height: 30px;margin-right:10px;}
+                    select{width: 95px;}
+                }
+            button,.btnsumit{ background: #0d7578; border-radius: 5px; padding: 0 12px;height: 30px;color:#fff; }
+                .icons-search{vertical-align: middle; display: inline-block; height: 15px; width: 15px; background-position: -541px -194px;}
+                .moz-select{height: 30px; line-height: 30px; margin-right: 15px; }
+        }
+        table{
+            width: 100%;text-align: center;background: #fff; border-spacing: 1px;border-collapse: separate;
+            th{background-color: #0d7578;line-height: 40px;color:#fff; height: 40px;}
+            td{ line-height: 32px; height: 32px;    }
+               tbody tr{
+                   background-color:#eee;cursor:pointer;
+                   &:hover,.active{ background-color: #fff;}
+                }
+        }
+    }
+    /**记录查询**/
+    /**站内消息**/
+     .loc-msg{
+         background-color: #eee; border-top:2px #0d7578 solid;padding:18px 27px;
+         li{ margin-top: 15px;border-bottom: 1px solid #ccc;background: #fff; cursor: pointer;
+          &.active,&:hover{ h4{background-color:#0d7578;color:#fff;}  }
+         }
+         h4{padding:0 29px; font-size: 16px;@include txthd; line-height:51px; border-bottom:2px solid #ccab67;
+         }
+         p{ padding:0 29px; @include txthd;height: 35px; line-height: 35px;}
+     }
+     /**站内消息**/
+
+     /**我的优惠**/
+     .my-dis{
+        padding:40px 0 30px;background-color: #eee;
+        .form{ border: none; padding: 0;}
+        .pd26{padding: 0 26px; }
+        table{ width: 100%;background: #fff;text-align: center;
+            th{ height: 51px; line-height: 51px;vertical-align: middle;border-bottom:2px solid #ccab67; color:#fff; background-color: #0d7578;}
+            td{
+                border-bottom: 1px solid #ccc;  height: 36px;line-height:36px;vertical-align: middle;
+            }
+            .apply{
+               padding: 0 15px;border-radius:11px; height:22px; line-height: 22px;background-color:#ccab67;color:#fff;
+               &.no,&:hover{   background-color:#e6e6e6;color:#2a2a2d;}
+            }
+        }
+        .txtct{text-align: center; line-height: 24px; margin: 24px 0px;}
+        .u-step-por{border: none;}
+        .my-link-copy{
+            width: 600px; border:1px solid #ddd; padding:23px; text-align: center; background-color: #fff;line-height: 24px; margin-top:24px;
+        }
+        .btn-view-money{ line-height:24px;  height: auto; padding: 15px 49px; margin: 0 0 9px;}
+     }
+    /**我的优惠**/
+}
+.agent-pg{
+    .ag-step{
+        font-size: 0;
+        div.step{position: relative;display: inline-block; padding-top: 20px; height: 136px;border-radius: 15px;
+            font-size: 18px;border:1px solid  #dcdcdc;background-color:#eee; width: 351px;
+            h4{text-align: left; height: 40px;line-height: 40px; font-size: 18px; padding-left:113px ;color:#0d7578; background: url("../images/bg/bg-step.jpg");}
+            p{text-align: left; margin-top: 8px; font-size: 16px;padding-left:113px; padding-right: 10px; line-height:24px; }
+            strong{ position: absolute;top:28px;left:15px;width:78px;height:78px;line-height: 78px;
+               border-radius: 50%; font-size:48px;  color:#fff; text-align: center;background-color: #0d7578;font-weight: bold;
+            }
+        }
+        .arrow1{ vertical-align: top; margin: 27px 5px 0;}
+
+        .arrow2{ vertical-align: top;}
+         .arrow3{ margin:5px; }
+        .step3{ margin-top:50px; }
+    }
+    .contact{
+        div{ display:inline-block;font-size: 14px; width: 351px;border:1px solid  #ddd; background-color: #eee;padding-top: 16px; padding-left: 57px;border-radius: 20px; height: 100px;
+            i{float:left; width: 81px; height: 67px; background-position:-781px  -182px; margin-right: 14px;}
+            }
+        .email{ margin-right:52px ;i{ background-position:-883px  -186px;   }}
+    }
+}
+
+
+
+
+#agnet{
+    .tips{padding: 27px; text-align: left; border:1px #ccc solid;background-color: #eee;font-size: 14px;line-height: 30px;}
+    .u-slot-mn li{width: 33%;border: none;line-height: 50px;}
+    .last-ul{ border-bottom-color:#ccc ;}
+    .top10{ margin-top:26px ;}
+    .pagination{ line-height: 30px; margin: 20px 0;}
+    .log-search{ padding-bottom: 20px;}
+    .tipstxt{ text-align: left; border-top: 2px #ccc solid; margin-top:40px; line-height: 24px;font-size: 12px; padding-top: 23px;}
+    .tikuan{ margin-left: 33px; margin-right: 33px; margin-bottom: 30px;}
+    .deposit_wrap{ background: #eee;}
+    #memberlist .log-form {text-align: left;}
+    #memberlist .dl_totalUsers{ float:right; position: relative; position: relative;top:-41px;font-size: 14px;}
+    .deposit_form {
+        @extend .v-align;
+         background-color:#eee; height:360px;
+        table{ margin:0 auto 0;font-size: 14px;text-align: right;
+         vertical-align: middle;display: inline-block;  border-spacing:10px; border-collapse: separate;
+           .cl-dd{text-align: left;}
+            input{ padding-left: 10px; height: 30px; width: 300px;border:1px solid #ddd;color:#0D7578;}
+            .redbtn{display: inline-block;border-radius: 10px; color: #000; line-height: 50px;height:50px; padding: 0 59px;background-color: #ccab67; }
+            input::placeholder{color:#0d7578; }
+        }
+}
+    .bank-data{ margin-left: 0; li{margin-left: 8px;}}
+}
+
+.addCard{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+    left: 0;
+}
+
+.addCard > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    background-color: #fff;
+    border-radius: 10px;
+    .inputbox {
+    width: 550px;
+    min-height: 45px;
+    margin: 0 auto 12px;
+    clear: both;
+    position: relative;
+}
+.formbtn {
+    cursor: pointer;
+    letter-spacing: 4px;
+    width: 320px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 16px;
+    background: #13a1ca;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    margin: 24px auto 45px;
+    font-weight: bold;
+}
+.inputbox .label {
+    font-size: 16px;
+    color: #666666;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    min-width: 112px;
+    text-align: right;
+}
+.inputbox input[type="text"], .inputbox input[type="password"] {
+    font-family: "Microsoft Yahei";
+    width: 420px;
+    height: 40px;
+    float: left;
+    border-radius: 4px;
+    outline: none;
+    background: #f8f8f8;
+    border: solid 1px #cacaca;
+    font-size: 14px;
+    text-indent: 15px;
+    color: #666;
+}
+}
+
+.addCard h1{
+    font-size: 24px;
+    color: #282828;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.addCard  .formbtn{
+    margin: 10px auto 20px;
+    display: block;
+    width: 100px;
+}
+
+.closeBtn{
+    @extend .icons;
+    width: 33px;
+    height:33px;
+    display: block;
+    position: absolute;
+    top:5px;
+    right:5px;
+   background-position: -431px -97px;
+    cursor: pointer;
+}
+.closeBtn:hover{
+    opacity: .9;
+}

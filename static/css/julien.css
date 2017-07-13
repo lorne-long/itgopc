@@ -1,0 +1,391 @@
+.mb10{
+	margin-bottom: 10px !important;
+}
+
+.ml148{
+	margin-left: 148px !important;
+}
+
+.bday .tbrithday{
+	width: 370px;
+	height: 120px;
+	margin: 0 auto;
+	background: url(/t3/images/bday-msg.png?v=3);
+	font-size: 24px;
+	text-align: center;
+	color: #999999;
+}
+
+.userCoupons .bday .tbrithday span span{
+	color: #3c3c3c;
+}
+
+.orangebox > p{
+	font-size: 24px;
+}
+
+.orangebox .moneywrap{
+	width: auto;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.orangebox .moneywrap a{
+	margin-bottom: 10px;
+}
+
+.orangebox .moneybox{
+	display: inline-block;
+	float: none;
+	margin: 0 5px;
+}
+
+.ul_auto_wrap {
+	width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.user_vip_progress_info {
+	position: relative;
+}
+.user_vip_progress_info .present_box {
+	display: table;
+	position: absolute;
+	z-index: 99;
+	height: 39px;
+	padding: 10px 12px 0;
+	border: 1px solid #ccc;
+	background: #ccab67;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	line-height: 18px;
+	text-align: center;
+	color: #fff;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.user_vip_progress_info .present_box .present_box_content {
+	font-size:14px;
+	position: relative;
+	z-index: 98;
+	display: table-cell;
+	vertical-align: middle;
+}
+.user_vip_progress_info .present_box .present_box_content .money_text{
+	color:#0d7578
+}
+.present_box .present_box_arrow {
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	z-index: 97;
+	margin-left: -5px;
+	width: 10px;
+	height: 10px;
+	background: #ccab67;
+	transform: rotate(45deg);
+}
+.user_vip_level_info {
+	overflow: hidden;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+	line-height:16px;
+}
+.user_vip_level_info .level_info_gap {
+	text-align: right;
+	float: left;
+}
+.user_vip_level_info .level_info_label {
+	font-size: 12px;
+	font-weight: 700;
+	color:#0d7578;
+}
+.user_vip_level_info .level_info01 {
+	width: 30%;
+}
+.user_vip_level_info .level_info02 {
+	width: 40%;
+}
+.user_vip_level_info .level_info03 {
+	width: 30%;
+}
+.user_vip_level_info .level_info_text {
+	font-size: 14px;
+	color: #999;
+}
+.user_vip_step01 .bottom_info_text {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 13px;
+	color: #999;
+}
+
+.progress_info {
+	position: relative;
+	margin: 7px 0;
+	width: 100%;
+	height: 4px;
+	background: #e6e6e6;
+	border-radius: 3000px;
+}
+.progress_info .progress_info_val {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: url("/mobile/images/bg/bg08.jpg?v=3") 0 0 repeat-x;
+	background-size: 1px 100%;
+	border-radius: 3000px;
+}
+
+.text_red {
+	color: #f66;
+}
+
+.meter{
+	height: auto;
+}
+
+.meter2{
+	height: 60px;
+}
+
+.meter2 .user_vip_progress_info{
+	height: 60px;
+}
+
+.meter2 .ul_auto_wrap{
+	overflow: inherit;
+}
+
+.acctmeter .meter,.orangebox .meter{
+	width: 90%;
+	margin:0 auto;
+}
+
+.contentbox.home .accountlvl{
+	overflow: hidden;
+}
+
+.wrapper .info > p,.cards p{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.personalinfo .info{
+	height: auto;
+}
+
+#phone-validat-div{
+	padding: 0 45px;
+}
+
+
+#phone-validat-div .icon_wrap{
+	width: 100px;
+	float: left;
+}
+
+.formbtn2{
+	position: absolute;
+	right: -90px;
+	top: 33px;
+	color: #ff6666;
+}
+
+.pt20{
+	padding-top: 20px !important;
+}
+
+.wrapcards:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.wrapcards .bankImg01{
+	background: url("../mobile/images/bankcards/01.jpg?v=3") no-repeat;
+    background-size: contain;
+}
+.wrapcards .bankImg02{
+	background: url("../mobile/images/bankcards/02.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg03{
+	background: url("../mobile/images/bankcards/03.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg04{
+	background: url("../mobile/images/bankcards/04.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg05{
+	background: url("../mobile/images/bankcards/05.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg06{
+	background: url("../mobile/images/bankcards/06.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg07{
+	background: url("../mobile/images/bankcards/07.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg08{
+	background: url("../mobile/images/bankcards/08.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg09{
+	background: url("../mobile/images/bankcards/09.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg10{
+	background: url("../mobile/images/bankcards/10.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg11{
+	background: url("../mobile/images/bankcards/11.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg12{
+	background: url("../mobile/images/bankcards/12.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.wrapcards .bankImg13{
+	background: url("../mobile/images/bankcards/13.jpg?v=3") no-repeat;
+	background-size: contain;
+}
+.cards .box{
+	margin: 0 38px;
+	height: 188px;
+}
+
+.personalinfo .info{
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.cards .bank_card_info{
+	/*padding: 20px;*/
+}
+
+.cards .box h2{
+	margin: 0;
+	padding:15px 20px;
+	border-bottom:solid 1px #fff;
+	font-weight: normal;
+	color: #FFFFFF;
+	font-size: 16px;
+	display: block;
+}
+.cards .box .acctnumber {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+.cards .box .acctname {
+	margin-top: 55px;
+}
+.cards .box h2, .cards .box .acctnumber, .cards .box .acctname {
+	font-weight: normal;
+	color: #FFFFFF;
+	font-size: 16px;
+	display: block;
+}
+.personalinfo h1{
+	margin-bottom: 10px;
+}
+
+.contentbox{
+	clear: both;
+}
+
+.user_center_nav_content_step {
+	display: none;
+	padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dashed #ccc;
+}
+
+.addCard{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	top: 0;
+	left: 0;
+}
+
+.addCard > div{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.addCard h1{
+	font-size: 24px;
+	color: #282828;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.addCard  .formbtn{
+	margin: 10px auto 20px;
+	display: block;
+	width: 100px;
+}
+
+.closeBtn{
+	width: 18px;
+	height: 18px;
+	display: block;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	background: url(../images/icons_popup.png?v=3) no-repeat -1px -102px;
+	cursor: pointer;
+}
+
+.closeBtn:hover{
+	opacity: .9;
+}
+
+.addBankTips {
+	line-height: 30px;
+	text-align: center;
+}
+
+.addCard .inputbox{
+	margin-bottom: 0;
+}
+
+.cardTips{
+	line-height: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#bankform .inputbox{
+	position: inherit;
+}
+
+.user_refer_link_wrap{
+	cursor: pointer;
+	padding: 15px;
+	border: 1px dashed #f66;
+	border-radius: 5px;
+	line-height: 24px;
+	color: #999;
+	background: #fff;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.user_refer_link_wrap:hover{
+	opacity: .8;
+}
