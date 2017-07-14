@@ -37,7 +37,7 @@
     data () {
       return {
         thead:["序",'操作类型','额度变量','改变前额度','改变后额度','加入时间'],
-        data:{},
+        data:{pageContents:[]},
         searchData:{
           total:0, //true string
           startDate:"", //true string
@@ -53,6 +53,7 @@
           if(index==this.searchData.pageIndex)return
           this.searchData.pageIndex=index
         }
+        this.data.pageContents=[]
         queryCreditlogs(this.searchData).then(res =>{
           if(res.success){
             this.data=res.data

@@ -13,7 +13,8 @@ Vue.filter('toFixed',function(val,_number=2){
 
 //转换日期格式格式
 Vue.filter('Date',function(val,format='yyyy-MM-dd'){
-  return new Date(val).format(format);
+  var arr=val.toString().replace(/[\:\-\/]/,",")
+  return new Date(arr).format(format);
 });
 
 //隐藏字符  abcd  默认隐藏为   a***

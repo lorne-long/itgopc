@@ -53,7 +53,7 @@
       return {
         thead:[],
         filterMenu,
-        data:{},
+        data:{pageContents:[]},
         searchData:{
           historyType:"deposit",
           startDate:"",

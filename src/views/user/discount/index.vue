@@ -2,7 +2,7 @@
   <div class="content-main member transact">
     <h3>我的优惠</h3>
     <div class="tab-menu u-tab-menu max-tab horizontal style_f">
-      <router-link v-for="item in menuList" :to="item.to"
+      <router-link v-for="item in menuList" :to="item.to" :key="item.name"
                    style="padding: 0 23px">
         {{item.name}}
       </router-link>

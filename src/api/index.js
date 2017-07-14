@@ -2,13 +2,13 @@ import vueRouter from '@/router'; //引入vue
 import _axios from 'axios'; //引入axios
 import store from '@/store';	//加载状态管理器
 var ajax=_axios.create({
-  baseURL:"http://112.213.126.135:4777",
+  // baseURL:"http://112.213.126.135:4777",
   method:"get",
   timeout:10000,
   responseType:"json",
   withCredentials:true,  // 跨域是否带Token
   // cancelToken: new CancelToken(function(cancel){})
-  headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
+  headers:{"content-type":"application/x-www-form-urlencoded;charset=UTF-8"}
   // transformRequest: [function (data) {
   //   // 这里可以在发送请求之前对请求数据做处理，比如form-data格式化等，这里可以使用开头引入的Qs（这个模块在安装axios的时候就已经安装了，不需要另外安装）
   //   data = Qs.stringify({});
@@ -25,12 +25,11 @@ var ajax=_axios.create({
 var qs=require('qs');
 let get=ajax.get;
 ajax.get=function(url,data,config){
- return get(url,Object.assign({
-   params:data||{}
+  return get(url,Object.assign({
+    params:data||{}
   },config||{}));
 };
 ajax.interceptors.request.use(function(config){
-  // console.log("处理请求之前的配置",config);params
   config.data=qs.stringify(config.data)
   return config;
 },function(error){
@@ -39,8 +38,16 @@ ajax.interceptors.request.use(function(config){
 });
 //响应拦截
 ajax.interceptors.response.use(function(response){
-  if(response.status===200&& !response.data.hasOwnProperty("success")){
-    response.data.success=response.data.code=="10000";
+  if(response.status===200&&response.data==undefined){
+    let responseText=response.request.responseText;
+    try{
+      response.data=JSON.parse(response.request.responseText)
+    }catch(e){
+      response.data={message:responseText,success:false};
+    }
+    if(!response.data.hasOwnProperty("success")){
+      response.data.success=response.data.code=="10000";
+    }
   }
   $load.close();
   if(response.status===200&&/40001/.test(response.data.code)){//没有登录
