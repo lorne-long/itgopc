@@ -38,28 +38,35 @@ ajax.interceptors.request.use(function(config){
 });
 //响应拦截
 ajax.interceptors.response.use(function(response){
-  if(response.status===200&&response.data==undefined){
-    let responseText=response.request.responseText;
-    try{
-      response.data=JSON.parse(response.request.responseText)
-    }catch(e){
-      response.data={message:responseText,success:false};
+    if(response.status===200&&response.data==undefined){
+      let olddata=response.request.responseText||response.request.response;
+      if(typeof olddata=="string"){
+        try{
+          response.data=JSON.parse(olddata)
+        }catch(e){
+          response.data={message:olddata,olddata:olddata,success:false};
+        }
+      }else{
+        response.data=olddata;
+      }
     }
     if(!response.data.hasOwnProperty("success")){
       response.data.success=response.data.code=="10000";
     }
-  }
-  $load.close();
-  if(response.status===200&&/40001/.test(response.data.code)){//没有登录
-    store.dispatch("INIT_INFO");//重新初始化信息
-    response.data.message="请先登录";
-    if(!/ajaxGetSessionPersonalData\.php$/i.test(response.config.url)){
-      store.commit("SHOW_LOGIN",true)
+    $load.close();
+    if(response.status===200&&/40001/.test(response.data.code)){//没有登录
+      store.dispatch("INIT_INFO");//重新初始化信息
+      response.data.message="请先登录";
+      if(!/ajaxGetSessionPersonalData\.php$/i.test(response.config.url)){
+        store.commit("SHOW_LOGIN",true)
+      }
     }
+    return response.status===200 ? response.data : response;
+  },
+  function(error){
+    $load.close();
+    return Promise.reject(error);
   }
-  return response.status===200 ? response.data : response;
-},function(error){
-  $load.close();
-  return Promise.reject(error);
-});
+)
+;
 export default ajax;

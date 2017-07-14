@@ -8,7 +8,7 @@
       距您的生日 <span class=""></span> 还有 <span class="j-howmanyDay"></span>&nbsp;天
     </p>
     <div class="tbrithday txtct">
-      <span>当前系统日期是<span class="">{{today|Date("M月dd日")}}</span></span>
+      <span>当前系统日期是<span class="">{{today}}</span></span>
     </div>
     <p class="txtct">
       <a href="javascript:;" class="formbtn btn-reset" @click="submit" >{{message}}</a>
@@ -22,7 +22,7 @@
     data() {
       return {
         message:"领取礼金",
-        today:new Date(),
+        today:new Date().format('M月dd日'),
         isSubmit:false
       };
     },

@@ -6,7 +6,7 @@ import ajax from './index'; //引入vue
 
 let _agentReport = "/mobi/agentReport.php";//额度记录查询
 let _queryCreditlogs = "/mobi/queryCreditlogs.php";//额度记录查询
-let _querySubProposal = "/mobi/querySubProposal.php";//查询下线提案
+let _querySubProposal = "/asp/querySubProposal.php";//查询下线提案
 let _searchCreditlogsData = "/asp/searchCreditlogsData.php";//报表数据汇总
 let _searchagprofitData = "/asp/searchagprofitData.php";//会员输赢查询
 let _getAgentQueryType = "/mobi/getAgentQueryType.php";//代理查询类型

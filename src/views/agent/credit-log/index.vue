@@ -5,11 +5,11 @@
       <div class="log-search" style="padding-bottom: 1em;">
         <div class="log-form">
           <div>
-            <input type="date" v-model="searchData.searchData" class="inpt " id="amountStarttime" placeholder="开始时间">
+            开始时间 <input type="date" v-model="searchData.searchData" class="inpt " id="amountStarttime" placeholder="开始时间">
             <i class="icons"></i>
           </div>
           <div>
-            <input type="date" v-model="searchData.endDate" class="inpt " id="amountEndtime" placeholder="结束时间"><i class="icons"></i>
+            结束时间 <input type="date" v-model="searchData.endDate" class="inpt " id="amountEndtime" placeholder="结束时间"><i class="icons"></i>
           </div>
           <button href="javascript:;" class="redbtn" @click="search"><i class="icons icons-search"></i>查询</button>
         </div>

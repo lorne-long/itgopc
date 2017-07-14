@@ -2,7 +2,7 @@
   <div class="content-main" id="agent">
     <div class="mem_cont deposit">
       <h3>会员列表</h3>
-      <div class="log-search ">
+      <div class="log-search" style="padding-bottom:2em;">
         <div class="deposit_wrap log-form">
           <div class="d_range">
             <input v-model="searchData.starttime" type="date" class="inpt " id="offlineUserStarttime" placeholder="开始时间">

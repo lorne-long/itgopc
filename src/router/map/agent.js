@@ -1,14 +1,14 @@
 //代理 路由
 import {AUTH_NAME} from "@/store/types"//权限名称
 import master from 'components/master';//首页
-let index=(resolve) => resolve(require('views/agent/index'));//首页
-let ptcommission=(resolve) => resolve(require('views/agent/ptcommission'));
-let subuser=(resolve) => resolve(require('views/agent/subuser'));
-let platform=(resolve) => resolve(require('views/agent/platform'));
-let creditlog=(resolve) => resolve(require('views/agent/creditlog'));
-let profile=(resolve) => resolve(require('views/agent/profile'));
-let personal=(resolve) => resolve(require('views/agent/personal'));
-let message=(resolve) => resolve(require('views/common/message'));
+let index=(resolve) => resolve(require('views/agent/index'));//数据汇总
+let ptcommission=(resolve) => resolve(require('views/agent/ptcommission'));//佣金报表
+let memberlist=(resolve) => resolve(require('views/agent/member-list'));//会员列表
+let memberbill=(resolve) => resolve(require('views/agent/member-bill'));//会员账务
+let creditlog=(resolve) => resolve(require('views/agent/credit-log'));//额度记录
+let personal=(resolve) => resolve(require('views/agent/personal'));//个人中心
+let message=(resolve) => resolve(require('views/common/message'));//站内信
+let drawmoney=(resolve) => resolve(require('views/money/drawmoney')); //取款
 export default [
   {
     path:"/agent",
@@ -28,52 +28,38 @@ export default [
         path:"ptcommission",
         name:"agent_ptcommission",
         component:ptcommission,
-        meta:{
-          headName:"佣金报表"
-        }
       },{
-        path:"subuser",
-        name:"agent_subuser",
-        component:subuser,
-        meta:{
-          headName:"会员列表"
-        }
-      },{
-        path:"platform",
-        name:"agent_platform",
-        component:platform,
-        meta:{
-          headName:"会员账务"
-        }
-      },{
+        path:"memberList",
+        name:"agent_memberlist",
+        component:memberlist,
+      }
+      ,{
         path:"creditlog",
         name:"agent_creditlog",
         component:creditlog,
-        meta:{
-          headName:"额度记录"
-        }
+      },
+      {
+        path:"memberbill",
+        name:"agent_memberbill",
+        component:memberbill,
       },{
-        path:"profile",
-        name:"agent_profile",
-        component:profile,
-        meta:{
-          headName:"个人中心"
-        }
-      },{
-        path:"agent_personal",
+        path:"personal",
         name:"agent_personal",
         component:personal,
-        meta:{
-          headName:"绑定银行卡/折号"
-        }
       },
       {
         path:"message",
         name:"agent_message",
-        component:message,
-        meta:{
-          headName:"站内消息"
-        }
+        component:message
+      },
+      {
+        path:"drawmoney",
+        name:"agent_drawmoney",
+        component:drawmoney
+      },{
+        path:"addbank",
+        name:"agent_addbank",
+        component:personal,
       }
     ]
   }

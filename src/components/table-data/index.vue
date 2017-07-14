@@ -59,15 +59,16 @@
     },
     watch:{
       "data.pageContents"(val){
-        this.showLoad= !this.showLoad;
-        console.log(this.showLoad)
+        if(val.length>0){
+          this.showLoad=false;
+        }else{
+          this.showLoad= !this.showLoad;
+        }
       }
     },
     methods:{
-      search(val){
-        var x={}
-        x.hasOwnProperty()
-        this.$emit("search",val)
+      search(val,size){
+        this.$emit("search",val,size)
       }
     },
     components:{

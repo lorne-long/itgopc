@@ -7,13 +7,15 @@ import Vue from 'vue'
 import {DateFormat} from "@/util/prototype"
 
 //保留二位小数点 不四舍五入 无小数点 自动加 .00
-Vue.filter('toFixed',function(val,_number=2){
+Vue.filter('toFixed',function(val='',_number=2){
   return val.toString().$toFixed(_number)
 });
-
 //转换日期格式格式
 Vue.filter('Date',function(val,format='yyyy-MM-dd'){
-  var arr=val.toString().replace(/[\:\-\/]/,",")
+  let arr=val;
+  if(new Date(val)=="Invalid Date"){
+     arr=val.toString().replace(/[\:\-\/]/,",")
+  }
   return new Date(arr).format(format);
 });
 
@@ -31,7 +33,6 @@ Vue.filter('conceal',function(val,start=1,end=0,replaceval='*'){
     }
   )
 });
-
 //分割字符串    例如  金额 10000换为 10，000 字符串相同
 Vue.filter('stringSplit',function(val,num=3,rpl=','){
  return val.toString().strSplit(num,rpl)

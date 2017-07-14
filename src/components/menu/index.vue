@@ -27,22 +27,16 @@
     {name:"记录查询",to:{path:"/user/log"},icon:"icon-log"},
     {name:"站内消息",to:{path:"/user/message"},icon:"icon-msg"}
   ]
-//  {name:'佣金报表',to:{path:"/agent/ptcommission"}},
-//  {name:'会员列表',to:{path:"/agent/subuser"}},
-//  {name:'会员账务',to:{path:"/agent/platform"}},
-//  {name:'额度记录',to:{path:"/agent/creditlog"}},
-//  {name:'个人中心',to:{path:"/agent/profile"}},
-//  {name:'绑定银行卡/折号',to:{path:"/agent/personal"}},
   let Agent_menu=[
     {name:"数据汇总",to:{name:"agent_index"},icon:"icon-user"},
     {name:"佣金报表",to:{name:"agent_ptcommission"},icon:"icon-gold"},
-    {name:"会员列表",to:{name:"agent_subuser"},icon:"icon-users"},
-    {name:"会员账务",to:{name:"agent_platform"},icon:"	icon-userMoney"},
+    {name:"会员列表",to:{name:"agent_memberlist"},icon:"icon-users"},
+    {name:"会员账务",to:{name:"agent_memberbill"},icon:"icon-userMoney"},
     {name:"额度记录",to:{name:"agent_creditlog"},icon:"icon-log"},
-    {name:"申请提款",to:{path:"/agent/index"},icon:"icon-cash"},
+    {name:"个人中心",to:{name:"agent_personal"},icon:"icon-user"},
+    {name:"申请提款",to:{name:"agent_drawmoney"},icon:"icon-cash"},
     {name:"站内信  ",to:{name:"agent_message"},icon:"icon-msg"},
-//    {name:"数据汇总",to:{path:""},icon:"icon-cash"},
-//    {name:"绑定银行卡  ",to:{path:""},icon:"icon-msg"}
+//   {name:"绑定银行卡  ",to:{path:""},icon:"icon-msg"}
   ]
   import {mapGetters} from 'vuex'
     export default {

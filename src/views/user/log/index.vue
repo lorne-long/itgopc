@@ -11,13 +11,10 @@
       </dl>
       <div class="log-form">
         <div>
-          开始时间<input type="date" class="calendar  mr20 inpt Wdate"
-                     v-model="searchData.startDate"
-        />
+          开始时间<input type="date" class="calendar  mr20 inpt Wdate" v-model="searchData.startDate"/>
         </div>
         <div>
-          结束时间<input type="date" class="calendar  mr20 inpt Wdate" name="endDate"
-                     maxlength="20" v-model="searchData.endDate"/>
+          结束时间<input type="date" class="calendar  mr20 inpt Wdate" maxlength="20" v-model="searchData.endDate"/>
         </div>
         <select v-model="searchData.friendtype" v-show="searchData.historyType=='friend'" class="moz-select select">
           <option value="0">推荐注册成功玩家</option>
@@ -66,13 +63,14 @@
     },
     watch:{},
     methods:{
-      search(index){
+      search(index,size){
         if(!isNaN(index)){
-          if(index==this.searchData.pageIndex)return
-          this.searchData.pageIndex=index
+          if(index==this.searchData.pageIndex&&this.searchData.size==size )return
+          this.searchData.pageIndex=index;
+          this.searchData.size=size||10;
         }
-        this.data.pageContents=[]
-        this.changeType(this.searchData.historyType)
+        this.data.pageContents=[];
+        this.changeType(this.searchData.historyType);
         queryHistory(this.searchData).then((res)=>{
           if(res.success){
             this.data=res.data;
@@ -125,6 +123,8 @@
     created(){
       this.searchData.startDate=new Date().addDay(-60).format("yyyy-MM-dd");
       this.searchData.endDate=new Date().format("yyyy-MM-dd");
+    },
+    mounted(){
       this.search()
     },
     components:{
