@@ -6,9 +6,7 @@
       <a v-if="!isSetPayPwd"  @click="showWhat=1" href="javascript:void(0)" :class="[{active:showWhat==1}]">设置支付密码</a>
       <a v-else @click="showWhat=2" href="javascript:void(0)" :class="[{active:showWhat==2}]">修改支付密码</a>
     </div>
-    <div class="tab-bd up-pwd">
-      <component :is="menuList[showWhat].component"></component>
-    </div>
+    <component :is="menuList[showWhat].component"></component>
   </div>
 </template>
 <script>

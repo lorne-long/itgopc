@@ -472,7 +472,7 @@ body .container{width:1200px;margin-left:auto;margin-right:auto;position:relativ
 .user-pg .tab-menu-two a.active{background:#0d7578;color:#fff;z-index:21}
 .user-pg .tab-menu-two a.active .bm-border{display:none}
 .user-pg .tab-menu-two a.active:after,.user-pg .tab-menu-two a.active:before{border-bottom-color:#0d7578}
-.user-pg .log-search{position:relative;border-top:2px solid #0d7578;background-color:#eee;padding:25px 32px 0;text-align:center}
+.user-pg .log-search{position:relative;border-top:2px solid #0d7578;background-color:#eee;padding:25px 32px 20px;text-align:center}
 .user-pg .log-search .data_info,.user-pg .log-search .log-list{border:1px solid #ddd}
 .user-pg .log-search dd,.user-pg .log-search dt{display:inline-block;line-height:25px;height:25px;padding:0 9px;cursor:pointer}
 .user-pg .log-search dd.active,.user-pg .log-search dt.active{background-color:#0d7578;color:#fff;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px}
@@ -537,7 +537,7 @@ body .container{width:1200px;margin-left:auto;margin-right:auto;position:relativ
 #agnet .deposit_form{background-color:#eee;height:360px}
 #agnet .deposit_form table{margin:0 auto;font-size:14px;text-align:right;vertical-align:middle;display:inline-block;border-spacing:10px;border-collapse:separate}
 #agnet .deposit_form table .cl-dd{text-align:left}
-#agnet .deposit_form table input{padding-left:10px;height:30px;width:300px;border:1px solid #ddd;color:#0D7578}
+#agnet .deposit_form table input,#agnet .deposit_form table .inpt{padding-left:10px;height:30px;width:300px;border:1px solid #ddd;color:#0D7578}
 #agnet .deposit_form table .redbtn{display:inline-block;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;color:#000;line-height:50px;height:50px;padding:0 59px;background-color:#ccab67}
 #agnet .deposit_form table input::-webkit-input-placeholder{color:#0d7578}
 #agnet .deposit_form table input:-moz-placeholder{color:#0d7578}

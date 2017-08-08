@@ -1,11 +1,12 @@
 <template>
   <div class="date-picker">
     <div class="date-picker-wrapper" @mouseenter="showCancel = true" @mouseleave="showCancel = false">
-      <div class="date-picker-input" @click="togglePanel" v-text="range ? value[0] + ' -- ' + value[1] : value">
+      <div class="date-picker-input" @click="togglePanel">
+        {{(range?value[0] + ' -- ' + value[1] : value)|Date}}
       </div>
-      <transition name="fade">
-        <img class="cancel-btn" src="./cancel.png" v-show="showCancel" @click="clear">
-      </transition>
+      <!--<transition name="fade">-->
+        <!--<img class="cancel-btn" src="./cancel.png" v-show="showCancel" @click="clear">-->
+      <!--</transition>-->
       <slot v-show="!showCancel">&nbsp;
       </slot>
     </div>
@@ -188,9 +189,8 @@
             this.month = this.tmpMonth
             this.date = date.value
             let value = `${this.tmpYear}-${('0' + (this.month + 1)).slice(-2)}-${('0' + this.date).slice(-2)}`
-            this.$emit('input', value)
+            this.$emit('input', value+" 00:00:00")
             this.panelState = false
-
           }else if(this.range && !this.rangeStart){
 
             this.tmpEndYear = this.tmpStartYear = this.tmpYear
@@ -223,7 +223,8 @@
             }
             let RangeStart = `${this.tmpStartYear}-${('0' + (this.tmpStartMonth + 1)).slice(-2)}-${('0' + this.tmpStartDate).slice(-2)}`
             let RangeEnd = `${this.tmpEndYear}-${('0' + (this.tmpEndMonth + 1)).slice(-2)}-${('0' + this.tmpEndDate).slice(-2)}`
-
+            RangeStart+=" 00:00:00"
+            RangeEnd+=" 00:00:00"
             let value = [RangeStart, RangeEnd]
             this.$emit('input', value)
 
@@ -395,6 +396,8 @@
   .date-picker{
     position: relative;
     height:32px;
+    display: inline-block;
+    vertical-align: middle;
   .date-picker-wrapper{
     border-radius: 2px;
     position: relative;
@@ -404,6 +407,7 @@
     box-sizing: border-box;
   }
   .date-picker-input{
+    overflow: hidden;
     height: 100%;
     width: 100%;
     font-size: inherit;

@@ -1,5 +1,5 @@
 import store from '@/store';	//加载状态管理器
-import {checkLogin,agentReport} from 'api/authService';
+import {checkLogin} from 'api/authService';
 import {AUTH_NAME} from "@/store/types"//权限名称
 // 权限拦截
 export default (to,from,next) =>{

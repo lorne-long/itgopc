@@ -1,5 +1,6 @@
 <template>
-  <div class="contentbox  formbox">
+  <div class="tab-bd up-pwd  v-align">
+  <div class="contentbox">
     <table style="margin:0 auto;">
       <tr>
         <td><span class="label">原来支付密码：</span></td>
@@ -18,6 +19,7 @@
         </td>
       </tr>
     </table>
+  </div>
   </div>
 </template>
 <script>

@@ -13,12 +13,20 @@
         <loadding>正在查询</loadding>
       </div>
       <p v-show="show">
+        <label>开始时间：</label>
+        <input readonly disabled type="text" :value="data.startDate">
+      </p>
+      <p v-show="show">
+        <label>结束时间：</label>
+        <input readonly disabled type="text" :value="data.endDate">
+      </p>
+      <p v-show="show">
         <label>总有效投注额：</label>
-        <input readonly disabled type="text" :value="validAmount">
+        <input readonly disabled type="text" :value="data.validAmount">
       </p>
       <p v-show="show">
         <label>洗码比率：</label>
-        <input readonly disabled type="text" :value="rate">
+        <input readonly disabled type="text" :value="data.rate">
       </p>
       <div v-show="show">
         <a href="javascript:void(0);" type="button" @click="doXima" class="btn-submit formbtn">确定洗码</a>
@@ -44,11 +52,15 @@
       return {
         type:"",
         platformData,
-        validAmount:0,
-        ximaAmount:0,
-        rate:0,
         show:false,
         showLoad:false,
+        data:{
+          startDate:"",
+          endDate:"",
+          validAmount:0,
+          ximaAmount:0,
+          rate:0,
+        }
       };
     },
     watch:{
@@ -60,15 +72,16 @@
       search(){
         if(this.type=="") return toast("请选择洗码平台!");
         this.showLoad=true;
-        getXimaData({gameId:this.type}).then(data=>{
-          this.show=data.success;
+        getXimaData({gameId:this.type}).then(res=>{
+          this.show=res.success;
           this.showLoad=false;
-          if(data.success){
-            this.validAmount=data.data.validAmount;
-            this.ximaAmount=data.data.ximaAmount;
-            this.rate=data.data.rate;
+          if(res.success){
+            Object.assign(this.data,res.data)
+//            this.validAmount=data.data.validAmount;
+//            this.ximaAmount=data.data.ximaAmount;
+//            this.rate=data.data.rate;
           }else{
-            toast(data.message);
+            toast(res.message);
           }
         }).catch(()=>{
           this.show=this.showLoad=false

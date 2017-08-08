@@ -64,7 +64,7 @@ import cover from 'base/cover/cover';
     border-bottom: 1px solid #ccc;
     line-height: 40px;
     background-color: #21a1a6;
-    color: #000;
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
   }

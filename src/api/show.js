@@ -33,47 +33,34 @@ let  $saveOrUpdateGameStatus="/mobi/saveOrUpdateGameStatus.php";//收藏/首先�
 let  $queryGameStatus="/mobi/queryGameStatus.php";//查询用户收藏
 
 
-let $getQTGame="/mobi/getQTGame.php";//QT手机端
-let $gameH5MGS="/mobi/gameH5MGS.php";//MSG手机端
-let $loginDT="/mobi/loginDT.php";//DT手机端
-let $getNTGame="/mobi/getNTGame.php";//NT手机端
-let $mobileGameAgFish="/mobi/mobileGameAgFish.php";//NT手机端
-let $gamePNGMobile="/gamePNGMobile.php";//PNG手机端
 
-
-
+let $loginDTInfo="/loginDTInfo.php";//DT PC端
+let $loginNTInfo="/loginNTInfo.php";//NT PC端
+let $loginTTGInfo="/loginTTGInfo.php";//TTG PC端
 export function getAllGames(fun){
   return axios.all([
-    axios.get('http://staticserverhost.com/games/slot/phone/ptPhone.json?v=q19'+version),//QT
-    axios.get('http://staticserverhost.com/games/slot/phone/mgsPhone.json?v=q19'+version), //MGS:
-    axios.get('http://staticserverhost.com/games/slot/phone/qtPhone.json?v=q19'+version), // QT:
-    axios.get('http://staticserverhost.com/games/slot/phone/dtPhone.json?v=q19'+version),// DT:
-    axios.get('http://staticserverhost.com/games/slot/phone/ntPhone.json?v=q19'+version),// NT:
-    axios.get('http://staticserverhost.com/games/slot/phone/pngPhone.json?v=q19'+version)//PNG:
+    axios.get('http://staticserverhost.com/games/slot/pt.json?v=q18'+version),//QT
+    axios.get('http://staticserverhost.com/games/slot/mgs.json?v=q18'+version), //MGS:
+    axios.get('http://staticserverhost.com/games/slot/qt.json?v=q18'+version), // QT:
+    axios.get('http://staticserverhost.com/games/slot/dt.json?v=q18'+version),// DT:
+    axios.get('http://staticserverhost.com/games/slot/nt.json?v=q18'+version),// NT:
+    axios.get('http://staticserverhost.com/games/slot/png.json?v=q18'+version)//PNG:
   ]).then(axios.spread(function(){
     return Promise.resolve(Array.from(arguments))
   }));
 }
-export function mobileGameAgFish(data){
-  return ajax.get($mobileGameAgFish,data);
+export function loginNTInfo(data){
+  return ajax.get($loginDTInfo,data);
 }
-export function gamePNGMobile(data){
-  return ajax.get($gamePNGMobile,data);
+export function loginDTInfo(data){
+  return ajax.get($loginNTInfo,data);
 }
-export function gameH5MGS(data){
-  return ajax.get($gameH5MGS,data);
+export function loginTTGInfo(data){
+  return ajax.get($loginTTGInfo,data);
 }
-export function getNTGame(data){
-  return ajax.get($getNTGame,data);
-}
-export function loginDT(data){
-  return ajax.get($loginDT,data);
-}
+
 export function queryGameStatus(data){
   return ajax.get($queryGameStatus,data);
-}
-export function getQTGame(data){
-  return ajax.get($getQTGame,data);
 }
 export function saveOrUpdateGameStatus(data){
   return ajax.get($saveOrUpdateGameStatus,data);

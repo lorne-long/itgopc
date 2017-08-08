@@ -3,7 +3,6 @@
     <v-header></v-header>
     <transition :name="transitionName">
         <router-view v-if="!$route.meta.noCache"></router-view>
-
     </transition>
     <transition :name="transitionName">
       <router-view v-if="$route.meta.noCache"></router-view>

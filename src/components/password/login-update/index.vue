@@ -1,5 +1,6 @@
 <template>
-  <div class=" formbox active contentbox" style="overflow: hidden;">
+  <div class="tab-bd up-pwd v-align">
+  <div class="contentbox">
     <table style="margin: 0px auto;">
       <tr>
         <td>原密码：</td>
@@ -25,6 +26,7 @@
         </td>
       </tr>
     </table>
+  </div>
   </div>
 </template>
 <script>

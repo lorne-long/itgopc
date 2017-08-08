@@ -11,7 +11,7 @@
 </template>
 <script>
   import {mapGetters,mapActions} from 'vuex'
-  import {modifyCustomerSocialInfo, getCustomerSocialInfo} from 'api/user';
+  import {modifyCustomerSocialInfo} from 'api/user';
 import  verifyPhone from './verify'
     export default {
         data() {

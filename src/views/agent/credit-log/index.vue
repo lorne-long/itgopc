@@ -5,11 +5,12 @@
       <div class="log-search" style="padding-bottom: 1em;">
         <div class="log-form">
           <div>
-            开始时间 <input type="date" v-model="searchData.searchData" class="inpt " id="amountStarttime" placeholder="开始时间">
-            <i class="icons"></i>
+           开始时间
+            <datepicker class="input" v-model="searchData.startDate" ><i class="icons"></i></datepicker>
           </div>
           <div>
-            结束时间 <input type="date" v-model="searchData.endDate" class="inpt " id="amountEndtime" placeholder="结束时间"><i class="icons"></i>
+            结束时间
+            <datepicker class="input" v-model="searchData.endDate"><i class="icons"></i></datepicker>
           </div>
           <button href="javascript:;" class="redbtn" @click="search"><i class="icons icons-search"></i>查询</button>
         </div>
@@ -32,6 +33,7 @@
 <script>
   import {queryCreditlogs}  from "api/agent"
   import tableData from "components/table-data"
+  import datepicker from "base/datepicker";
   export default {
     name:'hello',
     data () {
@@ -68,7 +70,7 @@
       this.searchData.endDate=new Date().format("yyyy-MM-dd");
     },
     components:{
-      tableData
+      tableData  ,datepicker
     }
   }
 </script>

@@ -5,38 +5,40 @@
       <div id="memberpage" class="log-search">
         <div class="log-form">
           <div>
-            <input v-model="searchData.starttime" type="date" class="inpt " id="startptCommDate" placeholder="开始时间">
-            <i class="icons"></i>
+            开始时间
+            <datepicker class="input" v-model="searchData.starttime"
+                        style="display: inline-block; vertical-align: top;"><i class="icons"></i></datepicker>
           </div>
           <div>
-            <input v-model="searchData.endtime" type="date" class="inpt" placeholder="结束时间">
-            <i class="icons"></i>
+            结束时间
+            <datepicker class="input" v-model="searchData.endtime" style="display: inline-block; vertical-align: top;">
+              <i class="icons"></i></datepicker>
           </div>
           <button type="button" @click="search"><i class="icons icons-search"></i>查询
           </button>
-          <select v-model="searchData.endDate" id="friend-type" style="margin-left: 10px;" class="moz-select select">
-            <option value="0">推荐注册成功玩家</option>
-            <option value="1">推荐奖金收入</option>
-            <option value="2">推荐奖金支出</option>
-          </select>
-          <a href="/t3/agentmanage.jsp#tab-tk">
-            <button type="button">提款</button>
-          </a>
+          <!--<select v-model="searchData.endDate" id="friend-type" style="margin-left: 10px;" class="moz-select select">-->
+          <!--<option value="0">推荐注册成功玩家</option>-->
+          <!--<option value="1">推荐奖金收入</option>-->
+          <!--<option value="2">推荐奖金支出</option>-->
+          <!--</select>-->
+          <!--<a href="/t3/agentmanage.jsp#tab-tk">-->
+          <!--<button type="button">提款</button>-->
+          <!--</a>-->
         </div>
         <div class="data_info">
           <div class="j-comTable">
-            <table-data :thead="thead" :data="data"  @search="search">
+            <table-data :thead="thead" :data="data" @search="search">
               <tr v-for="(item,i) in data.pageContents||[]">
-                <td>{{(data.pageNumber-1)*data.size+i+1}}</td>
+                <td>{{(data.pageNumber - 1) * data.size + i + 1}}</td>
                 <td>{{getPlatForm(item.id.platform)}}</td>
                 <td>{{item.amount}}</td>
-                <td>{{item.id.createdate|Date}}</td>
+                <td>{{item.id.createdate | Date}}</td>
                 <td>{{item.profitall}}</td>
                 <td>{{item.couponfee}}</td>
                 <td>{{item.ximafee}}</td>
                 <td>{{item.platformfee}}</td>
                 <td>{{item.betall}}</td>
-                <td>{{item.tempExcuteTime|Date}}</td>
+                <td>{{item.tempExcuteTime | Date}}</td>
               </tr>
             </table-data>
           </div>
@@ -58,43 +60,43 @@
 </template>
 
 <script>
+  import datepicker from "base/datepicker";
   import tableData from "components/table-data"
   import {searchPtCommissionsData} from "api/agent"
+
   export default {
-    data () {
+    data() {
       return {
-        thead:['序','平台','日佣金','数据日期','输赢额度','优惠额度','洗码额度','平台费','投注额','执行时间'],
-        data:{pageContents:[]},
-        searchData:{
-          starttime:"",
-          endtime:'',
-          size:10,
-          pageIndex:1,
+        thead: ['序', '平台', '日佣金', '数据日期', '输赢额度', '优惠额度', '洗码额度', '平台费', '投注额', '执行时间'],
+        data: {pageContents: []},
+        searchData: {
+          starttime: "",
+          endtime: '',
+          size: 10,
+          pageIndex: 1
         }
       }
     },
-    methods:{
+    methods: {
       search(index) {
-        if(!isNaN(index)){
-          if(index==this.searchData.pageIndex)return
-          this.searchData.pageIndex=index
+        if (!isNaN(index)) {
+          if (index == this.searchData.pageIndex) return
+          this.searchData.pageIndex = index
         }
-        this.searchData.starttime+=" 00:00:00"
-        this.searchData.endtime+=" 00:00:00"
-        this.data.pageContents=[]
-        searchPtCommissionsData(this.searchData).then(res =>{
-          if(res.success){
-            this.data=res.data;
-          }else{
+        this.data.pageContents = []
+        searchPtCommissionsData(this.searchData).then(res => {
+          if (res.success) {
+            this.data = res.data;
+          } else {
             toast(res.message)
           }
-        }).catch(err =>{
-          this.data={};
+        }).catch(err => {
+          this.data = {};
           toast("查询错误");
         })
       },
-      getPlatForm(val){
-        switch(val){
+      getPlatForm(val) {
+        switch (val) {
           case "slotmachine":
             return "老虎机佣金"
           case "liveall":
@@ -104,13 +106,13 @@
         }
       }
     },
-    created(){
-      this.searchData.starttime=new Date().addDay(-60).format("yyyy-MM-dd");
-      this.searchData.endtime=new Date().format("yyyy-MM-dd");
+    created() {
+      this.searchData.starttime = new Date().addDay(-60).format("yyyy-MM-dd");
+      this.searchData.endtime = new Date().format("yyyy-MM-dd");
 //      this.search()
     },
-    components:{
-      tableData
+    components: {
+      tableData, datepicker
     }
   }
 </script>

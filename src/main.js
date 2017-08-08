@@ -12,6 +12,7 @@ import directives from './vue-extend/directives';//装载directives
 
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
+  preLoad:2,
   // error: require('static/images/bank_loading.gif'),
   loading:   require('static/images/reload.gif'),
 })

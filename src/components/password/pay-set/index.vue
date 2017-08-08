@@ -1,5 +1,6 @@
 <template>
-  <div class="contentbox formbox">
+  <div class="tab-bd up-pwd  v-align">
+  <div class="contentbox">
       <table style="margin:0 auto;">
         <tr class="inputbox">
           <td class="label">登录密码：</td>
@@ -16,6 +17,7 @@
           <td><button type="submit" class="formbtn" @click="submit" >确定</button></td>
         </tr>
       </table>
+  </div>
   </div>
 </template>
 <script>

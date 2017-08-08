@@ -5,12 +5,14 @@
       <div class="log-search" style="padding-bottom:2em;">
         <div class="deposit_wrap log-form">
           <div class="d_range">
-            <input v-model="searchData.starttime" type="date" class="inpt " id="offlineUserStarttime" placeholder="开始时间">
-            <i class="icons"></i>
+            结束时间:
+            <datepicker class="input" v-model="searchData.starttime" style="display: inline-block; vertical-align: top;">
+              <i class="icons"></i></datepicker>
           </div>
           <div>
-            <input  v-model="searchData.starttime" type="date" class="inpt " id="offlineUserEndtime"  placeholder="结束时间">
-            <i class="icons"></i>
+            结束时间:
+            <datepicker class="input" v-model="searchData.endtime" style="display: inline-block; vertical-align: top;">
+              <i class="icons"></i></datepicker>
           </div>
           <button href="javascript:;" @click="search" class="redbtn" >
             <i class="icons icons-search"></i>查询
@@ -21,10 +23,10 @@
               <tr v-for="(item,i) in data.pageContents||[]">
                 <td>{{(data.pageNumber-1)*data.size+i+1}}</td>
                 <td>{{item.loginname}}</td>
-                <td>{{item.flag}}</td>
+                <td>{{item.flag=== 0 ? '启用' : '关闭'}}</td>
                 <td>{{item.credit}}</td>
                 <td>{{item.tempCreateTime|Date}}</td>
-                <td>{{item.howToKnow}}</td>
+                <td>{{item.howToKnow||'未知'}}</td>
               </tr>
             </table-data>
         </div>
@@ -36,6 +38,7 @@
 <script>
   import {queryAgentSubUserInfoData} from "api/agent"
   import tableData from "components/table-data"
+  import datepicker from "base/datepicker";
   export default {
     data () {
       return {
@@ -55,12 +58,10 @@
           if(index==this.searchData.pageIndex)return
           this.searchData.pageIndex=index
         }
-        this.searchData.starttime+=" 00:00:00"
-        this.searchData.endtime+=" 00:00:00"
         this.data.pageContents=[];
         queryAgentSubUserInfoData(this.searchData).then(res=>{
           if(res.success){
-            this.data=res.data.page;
+            this.data=res.data;
           }else{
             toast(res.message)
           }
@@ -74,7 +75,7 @@
       this.searchData.endtime=new Date().format("yyyy-MM-dd");
     },
     components:{
-      tableData
+      tableData,datepicker
     }
   }
 </script>

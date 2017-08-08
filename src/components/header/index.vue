@@ -37,7 +37,7 @@
         <div class="tips-title">最新公告：</div>
         <div class="tips-info">
           <marquee ref="marquee" direction="left" onmouseout="this.start();" onmouseover="this.stop();">
-            <router-link v-for="item in data" :to="{name:'agent'}">
+            <router-link v-for="item in data" :to="{name:'agent'}" :key="item.id">
               {{item.title}}
               <span>[{{item.createtime}}]</span>
             </router-link>
@@ -49,7 +49,7 @@
 </template>
 <script>
   import {mapGetters,mapActions,mapMutations} from 'vuex'
-  import {getNewAnnouncement} from "api/common"
+  import {getNewAnnouncement} from "api/show"
   export default {
     data() {
       return {
