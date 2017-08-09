@@ -28,6 +28,10 @@
         <label>洗码比率：</label>
         <input readonly disabled type="text" :value="data.rate">
       </p>
+      <p v-show="show">
+        <label>返水金额：</label>
+        <input readonly disabled type="text" :value="data.validAmount*data.rate |toFixed">
+      </p>
       <div v-show="show">
         <a href="javascript:void(0);" type="button" @click="doXima" class="btn-submit formbtn">确定洗码</a>
       </div>

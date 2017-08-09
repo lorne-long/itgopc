@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-  import  {commitPTSelf,canGetPt8CouponCheck} from "api/preferential-terms"
+  import  {commitPT8Self,canGetPt8CouponCheck} from "api/preferential-terms"
   import  {platformData} from "@/util/data"
   import {mapGetters} from 'vuex'
   export default {
@@ -59,7 +59,7 @@
           })
           return
         }
-        commitPTSelf({platform:this.platform}).then(res=>{
+        commitPT8Self({platform:this.platform}).then(res=>{
           if(res.success){
             $confirm("转入成功!","提示",{
               confirmText:"进入游戏"

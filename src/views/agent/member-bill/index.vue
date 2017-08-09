@@ -10,7 +10,7 @@
       </div>
     </div>
     <winlose  v-show="curName==-1"></winlose>
-    <recharge v-for="(item,i) in type.slice(1)"
+    <recharge v-for="(item,i) in type.slice(1)"  :key="item.value"
               :type="item.value"
               v-show="curName==item.value">
     </recharge>

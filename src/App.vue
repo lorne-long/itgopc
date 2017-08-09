@@ -7,7 +7,7 @@
     <transition :name="transitionName">
       <router-view v-if="$route.meta.noCache"></router-view>
     </transition>
-    <nav-menu ></nav-menu>
+    <nav-menu style="display: none;" ></nav-menu>
     <v-footer ></v-footer>
     <v-auth v-model="showLogin"></v-auth>
   </div>

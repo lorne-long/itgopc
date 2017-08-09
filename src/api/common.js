@@ -22,7 +22,7 @@ export function getMessageByUser(data) {
   return ajax.get($getMessageByUser, data);
 }
 export function readMsg(data) {
-  return ajax.post($readMsg, data);
+  return ajax.get($readMsg, data);
 }
 
 

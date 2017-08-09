@@ -11,7 +11,11 @@
           <!--<li><strong>主账户余额：<span class="cl-yl">0.00</span>元</strong></li>-->
         </ul>
         <ul class="clearfix u-pw-list bdtopnone">
-          <li>PT电游：<span class="cl-dd" @click="getGameMoney('PT')">{{myData.PT}}</span></li>
+          <!--<li v-for="(item,val) in myData">{{val}}电游：<span class="cl-dd" @click="getGameMoney('PT')">-->
+            <!--{{item}}-->
+          <!--</span>-->
+          <!--</li>-->
+          <li>QT电游：<span class="cl-dd" @click="getGameMoney('PT')">{{myData.PT}}</span></li>
           <li>QT电游：<span class="cl-dd" @click="getGameMoney('QT')">{{myData.QT}}</span></li>
           <li>DT电游：<span class="cl-dd" @click="getGameMoney('DT')">{{myData.DT}}</span></li>
         </ul>
@@ -29,32 +33,7 @@
     </ul>
     <h3 class="other">用户等级</h3>
     <div class="u-step-por">
-      <div class="accountlvl">
-        <div class="acctmeter">
-          <div class="meter meter2">
-            <div class="ul_auto_wrap mb10">
-              <div class="user_vip_progress_info j-allwidth">
-                <div class="present_box j-bet" style="margin-left: -56px;">
-                  <div class="present_box_content">
-                    本月投注额<br>
-                    <span class="money_text "></span>
-                  </div>
-                  <div class="present_box_arrow"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="meter">
-            <div class="ul_auto_wrap mb10">
-              <div class="user_vip_progress_info j-allwidth">
-                <div class="progress_info"><div class="progress_info_val j-progress_info_val"
-                                                style="width: 0%;"></div></div>
-                <div class="user_vip_level_info j-levelList"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- accountlvl -->
+      <vipStep></vipStep>
     </div>
     <h3 class="other">常用功能</h3>
     <ul class="u-often-fun clearfix">
@@ -74,37 +53,45 @@
 
 </template>
 <script>
-  import {getGameMoney} from 'api/user'
+  import {getGameMoney,getMoneyAll} from 'api/user'
+  import  vipStep from "components/vip-step"
+
   import {mapGetters,mapActions} from 'vuex'
     export default {
         data() {
             return {
               myData:{
-                PT:"点击刷新",
-                QT:"点击刷新",
-                DT:"点击刷新",
-                NT:"点击刷新",
-                MG:"点击刷新",
-                TTG:"点击刷新",
+                PT:"0.00",
+                QT:"0.00",
+                DT:"0.00",
+                NT:"0.00",
+                MG:"0.00",
+                TTG:"0.00",
               }
             };
         },
-        props:{},
         methods:{
           getGameMoney(val){
-            this.myData[val]="正在刷新.."
+            this.myData[val]="正在查询.."
             getGameMoney({gameCode:val}).then(res=>{
                this.myData[val]=res.success?res.data:res.message;
             })
+          },
+          getMoneyAll(){
+            for(let item in this.myData){
+              this.getGameMoney(item)
+            }
           }
         },
         computed:{
           ...mapGetters(["userData"])
         },
         created(){
+          this.getMoneyAll()
         },
-        components:{}
+        components:{vipStep}
     };
 </script>
 <style>
+  .u-step-por{ padding-top: 50px!important;}
 </style>

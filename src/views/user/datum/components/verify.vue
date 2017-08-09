@@ -33,7 +33,7 @@
 </template>
 <script>
   import vTouclick from 'components/touclick'
-  import  {endSmsTYJ,checkPhoneCode} from "api/user";
+  import  {sendSms4TYJ,checkPhoneCode} from "api/user";
   export default {
     data() {
       return {
@@ -70,7 +70,7 @@
         this.myData.check_key=obj.token;
         this.myData.check_address=obj.checkAddress;
         this.myData.sid=obj.sid;
-        endSmsTYJ(this.myData).then(res=>{
+        sendSms4TYJ(this.myData).then(res=>{
           toast(res.message);
           this.isSendMsg=res.success
 
