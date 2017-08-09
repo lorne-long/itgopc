@@ -28,7 +28,7 @@
 </template>
 <script>
   import  {commitPT8Self,canGetPt8CouponCheck} from "api/preferential-terms"
-  import  {platformData} from "@/util/data"
+  import  {platformData} from "@/assets/data"
   import {mapGetters} from 'vuex'
   export default {
     data() {

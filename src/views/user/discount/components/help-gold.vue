@@ -31,7 +31,7 @@
 </template>
 <script>
   import  {queryPTLosePromo,claimLosePromo} from "api/preferential-terms";
-  import  {platformData} from "@/util/data"
+  import  {platformData} from "@/assets/data"
   export default {
     data() {
       return {

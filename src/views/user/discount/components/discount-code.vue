@@ -28,7 +28,7 @@
 </template>
 <script>
   import  {transferInforCoupon} from "api/preferential-terms"
-  import  {platformData} from "@/util/data"
+  import  {platformData} from "@/assets/data"
   export default {
     data() {
       return {

@@ -50,7 +50,7 @@
 <script>
   import {getXimaData,doXima} from "api/preferential-terms"
   import loadding from "components/loadding"
-  import  {platformData} from "@/util/data"
+  import  {platformData} from "@/assets/data"
   export default {
     data() {
       return {
