@@ -108,9 +108,8 @@
       }
     },
     created() {
-      this.searchData.starttime = new Date().addDay(-60).format("yyyy-MM-dd");
-      this.searchData.endtime = new Date().format("yyyy-MM-dd");
-//      this.search()
+      this.searchData.starttime = new Date().addDay(-30).format();
+      this.searchData.endtime = new Date().format();
     },
     components: {
       tableData, datepicker
