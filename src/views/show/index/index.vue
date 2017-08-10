@@ -23,24 +23,7 @@
             </li>
           </ul>
         </div>
-        <div class="game-view">
-          <div class="banner game-banner">
-            <ul class="banner-wrapper game-wrapper horizontal">
-              <li v-for="item in bannerData" @click="" class="slider-item active">
-                <img :src="getImg({pic:item.picPath,category:item.platform})"> <strong>夏日海滩</strong>
-                <div class="game-play"><a class="icons" target="_blank"
-                                          href="/gameQT.php?gameCode=ELK-samonthebeach&amp;isfun=1&amp;type=1"
-                                          @click="tryGame(extend(item))">免费试玩</a>
-                  <a class="icons into" target="_blank"
-                     href="href=&quot;/gameQT.php?gameCode=ELK-samonthebeach&amp;isfun=0&amp;type=1&quot;"
-                     @click="playGame(extend(item))">进入游戏</a>
-                </div>
-              </li>
-            </ul>
-            <a class="icons prev" href="javascript:void(0);"></a>
-            <a class="icons next" href="javascript:void(0);"></a>
-          </div>
-        </div>
+        <recommand-games></recommand-games>
       </div>
     </div>
     <div class="activity">
@@ -71,18 +54,8 @@
             </div>
           </div>
           <img src="static/images/winning-title.jpg"/>
-          <div style="height:410px; overflow:hidden;margin-top:30px;">
-            <ul class="winning-list j-group">
-              <li v-for="item in winningData">
-                <div><img src="static/images/prd/1.jpg"/></div>
-                <div class="info">
-                  <p>恭喜玩家 <b>{{item.userName}}</b>在{{item.platform}}游戏</p>
-                  <p><span>{{item.gameName}} </span>赢得<span>{{item.prize}}</span>元</p>
-                  <p><b>{{item.prizeTime}}</b></p>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <winning-list></winning-list>
+
         </div>
       </div>
     </div>
@@ -110,74 +83,32 @@
 </template>
 <script>
   import  jackPot from "components/jackpot"
-  import {queryRecommandGamesList,queryBannerList,getCarouselListAll} from "api/show"
-  import {games} from  "@/vue-extend/mixins";
+  import {queryBannerList} from "api/show"
+  import recommandGames from  "./components/recommand-games";
+  import winningList from  "./components/winning-list";
   let slotGame=[
     {name:"PT 老虎机",class:"pt",to:{name:'slotgame',params:{type:"PT"}}},
-    {name:"DT 老虎机",class:"dt",to:{name:'slotgame',params:{type:"PT"}}},
+    {name:"DT 老虎机",class:"dt",to:{name:'slotgame',params:{type:"DT"}}},
     {name:"MG 老虎机",class:"mg",to:{name:'slotgame',params:{type:"MSG"}}},
     {name:"NT 老虎机",class:"nt",to:{name:'slotgame',params:{type:"NT"}}},
     {name:"QT 老虎机",class:"qt",to:{name:'slotgame',params:{type:"QT"}}},
     {name:"TTG 老虎机",class:"ttg",to:{name:'slotgame',params:{type:"TTG"}}}
   ]
   export default {
-    name:"index",
-    mixins:[games],
     data() {
       return {
-        slotGame,
-        bannerData:[],
-        winningData:[],
+        slotGame
       };
     },
-    props:{
-      showModel:{default:true}
-    },
     methods:{
-      extend(item){
-        return {
-          "eName":"",
-          "name":item.gameName,
-          "id":item.gameId,
-          "code":item.gameId,
-          "category":item.platform,
-          "type":"SLO",
-          "line":"",
-          "state":1,
-          "pic":item.picPath,
-          "tag":[]
-        }
-      }
     },
-    computed:{},
     created(){
       queryBannerList({bannerType:0}).then()
-      queryRecommandGamesList({gameType:0}).then(res=>{
-        this.bannerData=res.data;
-      });
-      getCarouselListAll().then(res=>{
-        if(res.success){
-          this.winningData=res.data;
-          let groupdom=$(".j-group");
-          function j_groupID_fun(){
-            groupdom.animate({top:"-102px"},1000,function(){
-              groupdom.find(":first").appendTo(groupdom);
-              groupdom.css("top",0);
-            });
-          }
-          var j_groupID=setInterval(j_groupID_fun,2000)
-          $(".j-group").hover(function(){
-            clearInterval(j_groupID);
-          },function(){
-            j_groupID=setInterval(j_groupID_fun,2000)
-          })
-        }
-      })
     },
     activated(){
     },
     components:{
-      jackPot
+      jackPot,recommandGames,winningList
     }
   };
 </script>

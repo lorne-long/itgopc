@@ -22,7 +22,7 @@
 </template>
 <script>
   import  md5  from "MD5";
-  import  {bindWithdrawPwd,checkWithdrawPwd}  from "api/safeCenter";
+  import  {bindWithdrawPwd,checkWithdrawPwd}  from "api/payment";
   export default {
     data() {
       return {

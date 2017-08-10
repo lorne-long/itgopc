@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-    import {validateBankNo,bindBankNo} from "api/safeCenter";
+    import {validateBankNo,bindBankNo} from "api/payment";
     export default {
         data() {
             return {

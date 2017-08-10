@@ -13,7 +13,6 @@
           <img :src="ImgCode" @click="getimg"/>
         </div>
         <!--<label class="agreement" for="login_xy"><input id='login_xy' type="radio">我已年满18岁，同意并查看过游戏的<a class="cl-gr" href="javascript:void(0);">《协议条款》</a></label>-->
-
       </div>
       <div class="user-btn">
         <button type="submit" @click.prevent="login" class="button login-into">立即登录</button>
@@ -68,12 +67,6 @@
               let $path="/index";
               this.$store.dispatch("UPDATE_USERDATA");
               this.$store.commit("SET_AUTH",role);
-              if(role==AUTH_NAME.AGENT){
-                $path="/agent/index";
-              }else if(role==AUTH_NAME.USER){
-                $path="/user/index";
-              }
-              this.$router.push({path:$path});
             }else{
               this.$router.push({path:rquest});
             }

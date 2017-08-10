@@ -84,6 +84,7 @@
           this.searchData.pageIndex = index
         }
         this.data.pageContents = []
+
         searchPtCommissionsData(this.searchData).then(res => {
           if (res.success) {
             this.data = res.data;

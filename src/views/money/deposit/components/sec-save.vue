@@ -77,7 +77,7 @@
   </div>
 </template>
 <script>
-  import {createDepositeOrder}  from "api/safeCenter"
+  import {createDepositeOrder}  from "api/payment"
     export default {
         data() {
             return {

@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-  import {findUserBankList,validateBankNo,bindBankNo} from "api/safeCenter"
+  import {findUserBankList,validateBankNo,bindBankNo} from "api/payment"
   import {mapGetters} from 'vuex'
   export default {
     data() {

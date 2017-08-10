@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-  import {checkWithdrawPwd} from 'api/safeCenter';
+  import {checkWithdrawPwd} from 'api/payment';
   export default {
     data() {
       return {}

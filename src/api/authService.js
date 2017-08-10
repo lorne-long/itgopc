@@ -1,14 +1,14 @@
 import ajax from './index'; //引入vue
 import store from '@/store';	//加载状态管理器
 
-let checkLogin = "/asp/ajaxGetSessionPersonalData.php";
-/*** 检查登录*/
-let $login = "/mobi/login.php";
-/*** 登录*/
-let $logout = '/mobi/logout.php';
-/*** 登出*/
-let $register = '/mobi/register.php';
-/***注册*/
+let checkLogin = "/user/ajaxGetSessionPersonalData.php";/*** 检查登录*/
+
+let $login = "/index/login.php";/*** 登录*/
+
+let $logout = '/index/logout.php';/*** 登出*/
+
+let $register = '/index/register.php';/***注册*/
+
 let $registerAgent = '/mobi/registerAgent.php';
 
 /**

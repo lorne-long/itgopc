@@ -12,11 +12,11 @@
       <div class="log-form">
         <div>
           开始时间
-          <datepicker class="input" v-model="searchData.startDate"><i class="icons"></i></datepicker>
+          <datepicker class="input" v-model="searchData.starttime"><i class="icons"></i></datepicker>
         </div>
         <div>
           结束时间
-          <datepicker class="input" v-model="searchData.endDate"><i class="icons"></i></datepicker>
+          <datepicker class="input" v-model="searchData.endtime"><i class="icons"></i></datepicker>
         </div>
         <select v-model="searchData.friendtype" v-show="searchData.historyType=='friend'" class="moz-select select">
           <option value="0">推荐注册成功玩家</option>
@@ -59,8 +59,8 @@
         data: {pageContents: []},
         searchData: {
           historyType: "deposit",
-          startDate: "",
-          endDate: '',
+          starttime: "",
+          endtime: '',
           pageIndex: 1,
           size: 10,
           friendtype: "0"
@@ -151,8 +151,8 @@
       },
     },
     created() {
-      this.searchData.startDate = new Date().addDay(-60).format("yyyy-MM-dd");
-      this.searchData.endDate = new Date().format("yyyy-MM-dd");
+      this.searchData.starttime = new Date().addDay(-60).format("yyyy-MM-dd");
+      this.searchData.endtime = new Date().format("yyyy-MM-dd");
     },
     mounted() {
       this.search()

@@ -12,8 +12,7 @@ String.prototype.format=function(){
 // 例子：
 // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
 // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
-Date.prototype.format = function (fmt) { //author: meizz
-
+Date.prototype.format = function (fmt='yyyy-MM-dd') { //author: meizz
   var o = {
     "M+": this.getMonth() + 1, //月份
     "d+": this.getDate(), //日
@@ -27,7 +26,6 @@ Date.prototype.format = function (fmt) { //author: meizz
   {
     fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
   }
-
   for (var k in o)
     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
   return fmt;
@@ -61,7 +59,7 @@ String.prototype.$copy=function(e){
   document.addEventListener('copy',save);
   document.execCommand('copy');
   document.removeEventListener('copy',save);
-  toast('复制成功');
+  toast&&toast('复制成功');
 }
 
 //分割字符串  123456789分割成 12,345,678

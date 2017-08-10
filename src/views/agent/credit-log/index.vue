@@ -6,11 +6,11 @@
         <div class="log-form">
           <div>
            开始时间
-            <datepicker class="input" v-model="searchData.startDate" ><i class="icons"></i></datepicker>
+            <datepicker class="input" v-model="searchData.starttime" ><i class="icons"></i></datepicker>
           </div>
           <div>
             结束时间
-            <datepicker class="input" v-model="searchData.endDate"><i class="icons"></i></datepicker>
+            <datepicker class="input" v-model="searchData.endtime"><i class="icons"></i></datepicker>
           </div>
           <button href="javascript:;" class="redbtn" @click="search"><i class="icons icons-search"></i>查询</button>
         </div>
@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-  import {queryCreditlogs}  from "api/agent"
+  import {queryCreditlogs}  from "api/user"
   import tableData from "components/table-data"
   import datepicker from "base/datepicker";
   export default {
@@ -41,9 +41,8 @@
         thead:["序",'操作类型','额度变量','改变前额度','改变后额度','加入时间'],
         data:{pageContents:[]},
         searchData:{
-          total:0, //true string
-          startDate:"", //true string
-          endDate:"",// true string
+          starttime:"", //true string
+          endtime:"",// true string
           size:10, //true string
           pageIndex:1//true string
         }
@@ -66,11 +65,11 @@
       }
     },
     created(){
-      this.searchData.startDate=new Date().addDay(-90).format("yyyy-MM-dd");
-      this.searchData.endDate=new Date().format("yyyy-MM-dd");
+      this.searchData.starttime=new Date().addDay(-90).format("yyyy-MM-dd");
+      this.searchData.endtime=new Date().format("yyyy-MM-dd");
     },
     components:{
-      tableData  ,datepicker
+      tableData,datepicker
     }
   }
 </script>

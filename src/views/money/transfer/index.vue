@@ -54,7 +54,7 @@
 </template>
 <script>
   import {mapGetters} from 'vuex'
-  import {updateGameMoney} from "api/safeCenter"
+  import {updateGameMoney} from "api/payment"
   import  {getAllMoney} from "api/user"
   let transferGameIn=[
     {value:"",text:"选择游戏平台"},{value:"PT",text:"PT账户"},{value:"MG",text:"MG账户"},{value:"TTG",text:"TTG账户"},

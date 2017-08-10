@@ -1,34 +1,34 @@
 
 import ajax from 'api/index'
 
-let $youhui="/rest/youhui.php"; //存送优惠
-let $getSelfYouHuiObject="/asp/getSelfYouHuiObject.php";//自助优惠
+let $youhui="/youhui/youhui.php"; //存送优惠
+let $getSelfYouHuiObject="/youhui/getSelfYouHuiObject.php";//自助优惠
 
-let $getAllAutoXimaObject="/asp/getAllAutoXimaObject.php";//取得用户全部平台的洗码资料
-let $getXimaData="/mobi/getXimaData.php" //查询洗码记录 来确认是否能洗码
-let $doXima="/mobi/doXima.php" //确认洗码
-
-
+let $getAllAutoXimaObject="/xima/getAllAutoXimaObject.php";//取得用户全部平台的洗码资料
+let $getXimaData="/xima/getXimaData.php" //查询洗码记录 来确认是否能洗码
+let $doXima="/xima/doXima.php" //确认洗码
 
 
-let $transferInforCoupon="/asp/transferInforCoupon.php"; //优惠券 使用优惠代码转入金额
-
-let $queryPTLosePromo="/mobi/queryPTLosePromo.php" //查询pt老虎机救援金记录
-let $claimLosePromo="/mobi/claimLosePromo.php ";//处理救援金
 
 
-let $getBetUpgrateVO="/asp/getBetUpgrateVO.php"; //自助晋级查询
-let $checkUpgrade="/asp/checkUpgrade.php"; //自助晋级
+let $transferInforCoupon="/youhui/transferInforCoupon.php"; //优惠券 使用优惠代码转入金额
+
+let $queryPTLosePromo="/youhui/queryPTLosePromo.php" //查询pt老虎机救援金记录
+let $claimLosePromo="/youhui/claimLosePromo.php ";//处理救援金
 
 
-let $canClaimBirthdayCoupon="/asp/canClaimBirthdayCoupon.php"; //是否可以领取生日礼金
-let $claimBirthdayCoupon="/asp/claimBirthdayCoupon.php"; //领取生日礼金
+let $getBetUpgrateVO="/youhui/getBetUpgrateVO.php"; //自助晋级查询
+let $checkUpgrade="/youhui/checkUpgrade.php"; //自助晋级
 
-let $queryFriendBonue="/mobi/queryFriendBonue.php";//查询推荐好友奖金余额
-let $transferInforFriend='/asp/transferInforFriend.php';//推荐好友奖金  转入平台
 
-let $commitPT8Self='/asp/commitPT8Self.php'; //体验金 领取
-let $canGetPt8CouponCheck ='/asp/canGetPt8CouponCheck.php'; //查询体验金
+let $canClaimBirthdayCoupon="/youhui/canClaimBirthdayCoupon.php"; //是否可以领取生日礼金
+let $claimBirthdayCoupon="/youhui/claimBirthdayCoupon.php"; //领取生日礼金
+
+let $queryFriendBonue="/youhui/queryFriendBonue.php";//查询推荐好友奖金余额
+let $transferInforFriend='/youhui/transferInforFriend.php';//推荐好友奖金  转入平台
+
+let $commitPT8Self='/youhui/commitPT8Self.php'; //体验金 领取
+let $canGetPt8CouponCheck ='/youhui/canGetPt8CouponCheck.php'; //查询体验金
 
 
 export function commitPT8Self(data){

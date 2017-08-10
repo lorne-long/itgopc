@@ -14,11 +14,11 @@
       </div>
       <p v-show="show">
         <label>开始时间：</label>
-        <input readonly disabled type="text" :value="data.startDate">
+        <input readonly disabled type="text" :value="data.starttime">
       </p>
       <p v-show="show">
         <label>结束时间：</label>
-        <input readonly disabled type="text" :value="data.endDate">
+        <input readonly disabled type="text" :value="data.endtime">
       </p>
       <p v-show="show">
         <label>总有效投注额：</label>
@@ -59,8 +59,8 @@
         show:false,
         showLoad:false,
         data:{
-          startDate:"",
-          endDate:"",
+          starttime:"",
+          endtime:"",
           validAmount:0,
           ximaAmount:0,
           rate:0,
@@ -81,9 +81,6 @@
           this.showLoad=false;
           if(res.success){
             Object.assign(this.data,res.data)
-//            this.validAmount=data.data.validAmount;
-//            this.ximaAmount=data.data.ximaAmount;
-//            this.rate=data.data.rate;
           }else{
             toast(res.message);
           }

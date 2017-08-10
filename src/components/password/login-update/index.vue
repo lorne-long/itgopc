@@ -31,7 +31,7 @@
 </template>
 <script>
   import  md5  from "MD5";
-  import  {changepws}  from "api/safeCenter";
+  import  {changepws}  from "api/payment";
   export default {
     data() {
       return {

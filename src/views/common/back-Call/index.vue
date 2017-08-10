@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-  import  {makeCall} from "api/common"
+  import  {makeCall} from "api/show"
   export default {
     data() {
       return {

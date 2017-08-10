@@ -60,7 +60,7 @@
 </template>
 <script>
   import md5 from "MD5";
-  import {findUserBankList, checkWithdrawPwd, withdraw_new} from "api/safeCenter";
+  import {findUserBankList, checkWithdrawPwd, withdraw_new} from "api/payment";
   import {mapGetters} from 'vuex'
 
   export default {

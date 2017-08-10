@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-  import  {modifyWithdrawPwd}  from "api/safeCenter";
+  import  {modifyWithdrawPwd}  from "api/payment";
   import  md5  from "MD5";
   export default {
     data() {

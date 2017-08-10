@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-  import  {getMessageByUser,readMsg} from "api/common";
+  import  {getMessageByUser,readMsg} from "api/show";
   import    pagingBy from "components/paging-by";
   import    loadding from "components/loadding";
   import  Vue from "vue";
